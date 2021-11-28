@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">  
+  <link rel="stylesheet" href="style.css">
+  <script src="index.js" defer ></script>
+  <title>Tip Calculator</title>
+
+</head>
+<body>
+
+    <div class="main-div">
+      
+      <h2>SPLITTER</h2>
+
+      <div class="calculator-flexcenter">
+        <div class="calculator-div">
+
+          <div class="calculator-leftside">
+            <h4>Bill</h4>
+            <input type="text" placeholder="0" name="bill" id="priceInput">
+
+            <h4>Select Tip %</h4>
+            <div class="tip-percentage-grid">
+              <div class="five">        <button id="five" class="tip-btn">5%</button>            </div>
+              <div class="ten">         <button id="ten" class="tip-btn">10%</button>            </div>
+              <div class="fifteen">     <button id="fifteen" class="tip-btn">15%</button>        </div>
+              <div class="twentyfive">  <button id="twentyfive" class="tip-btn">25%</button>     </div>
+              <div class="fifty">       <button id="fifty" class="tip-btn">50%</button>          </div>
+              <div class="costum-percentage"><input type="text" placeholder="Costum" name"costume-percentage" id="costum-percentage-input"></div>
+            </div>
+
+            <div class="h4-and-zeroPerson-error">
+              <h4>Number of People</h4>
+              <h4 class="error">Can't be zero</h4>
+            </div>
+            <input type="text" placeholder="0" name="numberOfPeople" id="personNumber">
+          </div>
+  
+
+
+          <div class="calculator-rightside">
+           
+            <div class="per-person-tip">
+              <div class="tip-amount">
+                <h4>Tip Amount</h4>
+                <p>/ person</p>
+              </div>
+          
+              <div class="price-number">
+                <h1 class="price">$0.00</h1>
+              </div>
+            </div>
+
+            <div class="total-tip">
+              <div class="tip-amount">
+                <h4>Total</h4>
+                <p>/ person</p>
+              </div>
+
+              <div class="price-number">
+                <h1 class="price">$0.00</h1>
+              </div>
+            </div>
+
+            <button class="reset">RESET</button>
+          </div>
+
+        </div>
+      </div>
+      
+      <div class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+        Coded by <a href="https://www.instagram.com/vakhomaghradze/" target="_blank">Vakho Maghradze</a>.
+      </div>
+
+    </div>
+  
+
+</body>
+</html>

@@ -1,0 +1,361 @@
+
+// Variables //
+$strong_Cyan: hsl(172, 67%, 45%);
+$strong_Cyan_two: hsl(189, 77%, 79%);
+$very_Dark_Cyan: hsl(183, 100%, 15%);
+$very_Dark_Cyan_two: hsl(183, 81%, 22%);
+
+$dark_Gray_Cyan_two: hsl(187, 9%, 62%);
+$dark_Gray_Cyan: hsl(186, 14%, 43%);
+$other_Dark_Gray_Cyan: hsl(184, 14%, 56%);
+
+$light_Gray_Cyan: hsl(185, 41%, 84%);
+$other_Light_Gray_Cyan: hsl(189, 41%, 97%);
+
+$white: hsl(0, 0%, 100%);
+
+$inputFontSize: 1.5rem; 
+//--------------------------------------------------------------------------// 
+// Mixins
+
+@mixin flexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+//--------------------------------------------------------------------------//
+
+*,
+*::after,
+*::before{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+img{
+    max-width: 100%;
+}
+
+body{
+    font-family: 'Space Mono', monospace;
+}
+
+.main-div{
+    width: 100%;
+    min-height: 100vh;
+    background-color: $light_Gray_Cyan;
+}
+
+.main-div h2{
+    color: $very_Dark_Cyan;
+    opacity: 0.7;
+    font-size: 2rem;
+    letter-spacing: 5px;
+    margin: 0 auto 4rem auto;
+    text-align: center;
+    padding-top: 6rem
+}
+
+.calculator-flexcenter{
+    @include flexCenter();
+}
+
+.calculator-div{
+    background-color: $white;
+    width: 60%;
+    max-width: 1440px;
+    display: flex;
+    padding: 2rem 3rem; 
+    border-radius: 15px;
+    box-shadow: 1px 1px 10px $other_Dark_Gray_Cyan;
+}
+
+.calculator-leftside{
+    width: 47%;
+    margin-right: 3%;
+
+    h4{
+        color: $dark_Gray_Cyan;
+        font-size: 1.1rem;
+        margin-bottom: 0.6rem;
+    }
+
+    #priceInput{
+        text-decoration-style: none;
+        border: 2.5px solid $other_Light_Gray_Cyan;
+        border-radius: 6px;
+        background-color: $other_Light_Gray_Cyan;
+        background-image: url("/images/icon-dollar.svg");
+        background-position: 10px 10px;
+        background-repeat: no-repeat;
+        background-size: 1rem;
+        font-size: 1.3rem;
+        font-weight: bold;
+        padding: 0.4rem 1rem 0.4rem 0.4rem;
+        width: 100%;
+        color: $very_Dark_Cyan;
+        font-family: 'Space Mono', monospace;
+        outline: none;
+        text-align: end;
+        margin-bottom: 2rem;
+    }
+
+    #priceInput:hover{
+        cursor: pointer;
+    }
+
+    #priceInput:focus{
+        border: 2.5px solid $strong_Cyan;
+    }
+
+    #priceInput::placeholder{
+        color: $other_Dark_Gray_Cyan;
+        opacity: 0.8;
+    }
+
+    .tip-percentage-grid{
+        width: 100%;
+        display: grid;
+        grid-template-columns: 33% 33% 33%;
+        grid-template-rows: 48% 48%;
+        grid-column-gap: 7px;
+        grid-row-gap: 10px;
+        margin-bottom: 2.5rem;
+    }
+
+
+    .tip-btn{
+        width: 90%;
+        background-color: $very_Dark_Cyan;
+        border: none;
+        border-radius: 5px;
+        text-decoration: none;
+        color: $white;
+        font-size: 1.4rem;
+        font-weight: 700;
+        padding: 5px 0;
+        font-family: 'Space Mono', monospace;
+    }
+
+    .tip-btn:focus{
+        background-color: $strong_Cyan_two;
+        color: $very_Dark_Cyan;
+    }
+
+    .tip-btn:hover{
+        cursor: pointer;
+    }
+
+    #costum-percentage-input{
+        width: 90%;
+        text-decoration-style: none;
+        text-align: center;
+        font-weight: bold;
+        font-size: 1.4rem;
+        font-family: 'Space Mono', monospace;
+        outline: none;
+        border: 2.5px solid $other_Light_Gray_Cyan;
+        border-radius: 5px;
+        background-color: $other_Light_Gray_Cyan;
+        color: $very_Dark_Cyan;
+        padding: 2.5px 0;
+        box-shadow: 1px 1px lightgrey;
+    }
+
+    #costum-percentage-input::placeholder{
+        color: $very_Dark_Cyan;
+        opacity: 0.8;
+    }
+
+    #costum-percentage-input:focus{
+        border: 2.5px solid $strong_Cyan;
+        box-shadow: none;
+    }
+
+    #personNumber{
+        text-decoration-style: none;
+        border: 2.5px solid $other_Light_Gray_Cyan;
+        border-radius: 6px;
+        background-color: $other_Light_Gray_Cyan;
+        background-image: url("/images/icon-person.svg");
+        background-position: 10px 10px;
+        background-repeat: no-repeat;
+        background-size: 1rem;
+        font-size: 1.3rem;
+        font-weight: bold;
+        padding: 0.4rem 1rem 0.4rem 0.4rem;
+        width: 100%;
+        color: $very_Dark_Cyan;
+        font-family: 'Space Mono', monospace;
+        outline: none;
+        text-align: end;
+        margin-bottom: 1rem;
+    }
+
+    #personNumber:hover{
+        cursor: pointer;
+    }
+
+    #personNumber:focus{
+        border: 2.5px solid $strong_Cyan;
+    }
+
+    #personNumber::placeholder{
+        color: $other_Dark_Gray_Cyan;
+        opacity: 0.8;
+    }
+
+    .h4-and-zeroPerson-error{
+        display: flex;
+        justify-content: space-between;
+
+        .error{
+            color: rgb(245, 110, 110);
+            opacity: 0;
+        }
+    }
+
+}
+
+.calculator-rightside{
+    width: 47%;
+    margin-left: 3%;
+    background-color: $very_Dark_Cyan;
+    border-radius: 15px;
+    padding: 2.5rem 2.2rem;
+
+    .total-tip{
+        margin-bottom: 6.5rem
+    }
+
+    .per-person-tip{
+        margin-bottom: 2rem;
+    }
+
+    .per-person-tip,
+    .total-tip{
+        @include flexCenter();
+        justify-content: space-between;
+
+        .tip-amount h4{
+            color: $white;
+        }
+
+        .tip-amount p{
+            color: $dark_Gray_Cyan_two;
+            font-size: 0.9rem;
+        }
+
+        .price-number h1{
+            color: $strong_Cyan;
+            font-size: 2.5rem;
+        }
+    }
+
+    .reset{
+        width: 100%;
+        color: $very_Dark_Cyan;
+        background-color: $very_Dark_Cyan_two;
+        outline: none;
+        border-style: none;
+        border-radius: 6px;
+        font-size: 1.5rem;
+        padding: 0.5rem 0;
+        font-family: 'Space Mono', monospace;
+        font-weight: 700;
+    }
+
+    .reset:hover{
+        cursor: pointer;
+    }
+
+    .reset:focus{
+        background-color: $strong_Cyan_two;
+    }
+
+}
+
+.attribution{
+    width: 100%;
+    background-color: $light_Gray_Cyan;
+    text-align: center;
+    font-family: 'Space Mono', monospace;
+    font-size: 1.2rem;
+    margin-top: 6rem;
+    a{
+        text-decoration: none;
+        color: black;
+    }
+
+    a:hover{
+        color: $strong_Cyan ;
+    }
+
+}
+
+// Media Query //
+
+@media (max-width: 560px) {
+    
+    .calculator-div{
+        background-color: $white;
+        width: 75%;
+        max-width: 1440px;
+        display: flex;
+        flex-direction: column;
+        padding: 2rem 2rem; 
+        border-radius: 15px;
+        box-shadow: 1px 1px 10px $other_Dark_Gray_Cyan;
+    }
+
+    .calculator-leftside{
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 1.5rem;
+
+        h4{
+            font-size: 1rem;
+        }
+
+        .tip-percentage-grid{
+            width: 100%;
+            display: grid;
+            grid-template-columns: 50% 50%;
+            grid-template-rows: 33% 33% 33%;
+            grid-column-gap: 7px;
+            grid-row-gap: 10px;
+            margin-bottom: 3rem;
+        }
+
+    }
+
+    .calculator-rightside{
+        width: 100%;
+        margin-left: 0;
+
+        .per-person-tip,
+        .total-tip{
+            .price-number{
+                .price{
+                    font-size: 2.1rem;
+                }
+            }
+        }
+
+        .reset{
+            background-color: $strong_Cyan;
+        }
+
+    }
+
+    .attribution{
+        width: 75%;
+        text-align: center;
+        margin: 6rem auto 0 auto;
+        padding-bottom: 1.5rem;
+    }
+
+}
+
