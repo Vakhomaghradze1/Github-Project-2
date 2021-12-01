@@ -102,6 +102,12 @@ body{
         margin-bottom: 2rem;
     }
 
+    #priceInput::-webkit-outer-spin-button,
+    #priceInput::-webkit-inner-spin-button{
+        -webkit-appearance: none;
+         margin: 0;
+    }
+
     #priceInput:hover{
         cursor: pointer;
     }
@@ -140,12 +146,13 @@ body{
     }
 
     .tip-btn:focus{
-        background-color: $strong_Cyan_two;
+        background-color: $strong_Cyan;
         color: $very_Dark_Cyan;
     }
 
     .tip-btn:hover{
         cursor: pointer;
+        background-color: $strong_Cyan_two;
     }
 
     #costum-percentage-input{
@@ -162,6 +169,12 @@ body{
         color: $very_Dark_Cyan;
         padding: 2.5px 0;
         box-shadow: 1px 1px lightgrey;
+    }
+
+    #costum-percentage-input::-webkit-outer-spin-button,
+    #costum-percentage-input::-webkit-inner-spin-button{
+        -webkit-appearance: none;
+         margin: 0;
     }
 
     #costum-percentage-input::placeholder{
@@ -194,6 +207,13 @@ body{
         margin-bottom: 1rem;
     }
 
+
+    #personNumber::-webkit-outer-spin-button,
+    #personNumber::-webkit-inner-spin-button{
+        -webkit-appearance: none;
+         margin: 0;
+    }
+
     #personNumber:hover{
         cursor: pointer;
     }
@@ -215,6 +235,12 @@ body{
             color: rgb(245, 110, 110);
             opacity: 0;
         }
+
+        .error-shown{
+            color: rgb(245, 110, 110);
+            opacity: 1;
+        }
+
     }
 
 }
@@ -269,10 +295,11 @@ body{
 
     .reset:hover{
         cursor: pointer;
+        background-color: $strong_Cyan_two;
     }
 
     .reset:focus{
-        background-color: $strong_Cyan_two;
+        background-color: $strong_Cyan;
     }
 
 }
@@ -294,6 +321,7 @@ body{
     }
 
 }
+
 
 // Media Query //
 
